@@ -1,38 +1,202 @@
+:root {
+  --principal: #6c4ab6;
+  --headerBg: #232323;
+  --mainBg: #2c2c2c;
+  --white: #ffffff;
+}
+
 .App {
-  text-align: center;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App > header {
+  height: 30%;
+  background-color: var(--headerBg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App > header > .title {
+  font-size: 3rem;
+  color: var(--white);
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App > header > .title > span {
+  color: var(--principal);
+}
+
+.App > main {
+  position: relative;
+  height: 60%;
+  background-color: var(--mainBg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.App > main > .qrCode-container {
+  border-radius: 1rem;
+  position: absolute;
+  top: -80px;
+  background-color: var(--white);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App > main > .inputGroup {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1.3rem;
+}
+
+.App > main > .inputGroup > .inputWrite {
+  background-color: var(--principal);
+  font-size: 1.5rem;
+  color: var(--white);
+  border-radius: 1rem;
+  font-weight: 600;
+  width: 31.25rem;
+  height: 3rem;
+  outline: none;
+  text-align: center;
+  padding: 0 1.3rem;
+}
+
+.inputWrite::placeholder {
+  color: #ffffff75;
+}
+
+.App > main > .inputGroup > a {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.App > main > .inputGroup > a > .downloadQRCode {
+  background-color: var(--principal);
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--white);
+  border-radius: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem 1.3rem 1rem 1.3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+footer {
+  background-color: var(--mainBg);
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-weight: 800;
+  width: 100%;
+}
+
+footer > p:nth-child(2) {
+  color: var(--principal);
+}
+
+@media (min-width: 1280px) {
+  .App > header > .title {
+    font-size: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App > main > .qrCode-container {
+    top: -50px;
+    width: 210px;
+    height: 210px;
+  }
+
+  .App > main > .inputGroup {
+    margin-top: 7rem;
+  }
+
+  .App > main > .inputGroup > .inputWrite {
+    font-size: 1.5rem;
+    width: 300px;
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 769px) {
+  .App > header > .title {
+    font-size: 3rem;
+  }
+
+  .App > main > .qrCode-container {
+    top: -50px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .App > main > .inputGroup {
+    margin-top: 7rem;
+  }
+
+  .App > main > .inputGroup > .inputWrite {
+    font-size: 1.5rem;
+    width: 300px;
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .App > header > .title {
+    font-size: 2.2rem;
+  }
+
+  .App > main > .qrCode-container {
+    top: -50px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .App > main > .inputGroup {
+    margin-top: 5rem;
+  }
+
+  .App > main > .inputGroup > .inputWrite {
+    font-size: 1.5rem;
+    width: 300px;
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .App > header > .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .App > main > .qrCode-container {
+    top: -50px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .App > main > .inputGroup {
+    margin-top: 7rem;
+  }
+
+  .App > main > .inputGroup > .inputWrite {
+    font-size: 1.5rem;
+    width: 250px;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .inputWrite::placeholder {
+    font-size: 1.2rem;
   }
 }
